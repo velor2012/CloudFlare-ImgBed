@@ -122,6 +122,8 @@ export async function onRequest(context) {  // Contents of context object
         if (fileType) {
             headers.set('Content-Type', fileType);
         }
+        // 跨域配置
+        headers.set('Access-Control-Allow-Origin', '*');
         const newRes =  new Response(response.body, {
             status: response.status,
             statusText: response.statusText,
